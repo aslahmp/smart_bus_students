@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class LoginMobileNumberController extends GetxController {
-  //TODO: Implement LoginMobileNumberController
+class LoginOtpController extends GetxController {
+  //TODO: Implement LoginOtpController
 
   final count = 0.obs;
   @override
@@ -16,5 +16,5 @@ class LoginMobileNumberController extends GetxController {
 
   @override
   void onClose() {}
-  void submit() {}
+  void increment() => count.value++;
 }
