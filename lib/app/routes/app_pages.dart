@@ -6,13 +6,15 @@ import '../modules/LoginOtp/bindings/login_otp_binding.dart';
 import '../modules/LoginOtp/views/login_otp_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/splash/bindings/splash_binding.dart';
+import '../modules/splash/views/splash_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN_MOBILE_NUMBER;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.LOGIN_OTP,
       page: () => LoginOtpView(),
       binding: LoginOtpBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => SplashView(),
+      binding: SplashBinding(),
     ),
   ];
 }
