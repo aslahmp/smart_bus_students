@@ -8,14 +8,17 @@ class LoginMobileNumberView extends GetView<LoginMobileNumberController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          ImageView(),
-          EnterMobileNumber(),
-          MobileNumberFeeld(),
-          SubmitButton(),
-        ],
+        body: Form(
+      key: controller.formKey,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ImageView(),
+            EnterMobileNumber(),
+            MobileNumberFeeld(),
+            SubmitButton(),
+          ],
+        ),
       ),
     ));
   }

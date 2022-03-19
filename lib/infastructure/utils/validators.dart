@@ -36,9 +36,6 @@ class Validators {
 
   static String? mobileNumberValidator(value) {
     if (value?.length != 10) {
-      if (value?.length == 1 && value == 0) {
-        return "Enter a valid number";
-      }
       return "Enter a valid number";
     } else {
       return null;
