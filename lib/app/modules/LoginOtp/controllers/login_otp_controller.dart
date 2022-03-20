@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_bus_students/app/data/firbase/auth/firbase_auth.dart';
+import 'package:smart_bus_students/app/data/firbase/user/friebase_user.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../LoginMobileNumber/controllers/login_mobile_number_controller.dart';
@@ -13,8 +14,8 @@ class LoginOtpController extends GetxController {
   var mobileNumberController = Get.find<LoginMobileNumberController>();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final otp = TextEditingController();
-  var _authFirebase = FirebaseAuthHelper();
-
+  final _authFirebase = FirebaseAuthHelper();
+  final _userFirebase = FriebaseUser();
   String? verificationId;
   final isLoading = false.obs;
 
@@ -80,11 +81,13 @@ class LoginOtpController extends GetxController {
   }
 
   void submitOtp() async {
+    isLoading.value = true;
     if (formKey.currentState!.validate() && verificationId != null) {
       isLoading.value = true;
       var result = await _authFirebase.verifySmsCode(otp.text, verificationId!);
       isLoading.value = false;
       if (result.isSuccess) {
+        await _userFirebase.setUser(mobileNumber.value);
         Get.offAllNamed(Routes.HOME);
       } else {
         Get.snackbar(
@@ -95,6 +98,7 @@ class LoginOtpController extends GetxController {
         );
       }
     }
+    isLoading.value = false;
   }
 
   @override

@@ -6,6 +6,7 @@ import 'package:result_type/result_type.dart';
 class FirebaseAuthHelper {
   final _auth = FirebaseAuth.instance;
   final _durationTimeOut = Duration(seconds: 60);
+
   Future<void> sendSms(
       {required String mobileNumber,
       required Function(String, int?) codeSent,

@@ -10,19 +10,27 @@ class SubmitButton extends GetView<LoginMobileNumberController> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
       width: double.infinity,
-      child: TextButton(
-          onPressed: controller.submit,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 8),
-            child: Text(
-              'Submit',
-              style: AppTextStyles.regular.copyWith(
-                fontSize: 15,
-                color: AppColors.white,
-              ),
-            ),
-          ),
-          style: AppConstants.buttonStyle),
+      // height: 50,
+      child: Obx(() {
+        return TextButton(
+            onPressed: controller.isLoading.value ? null : controller.submit,
+            child: controller.isLoading.value
+                ? CircularProgressIndicator(
+                    color: AppColors.white,
+                  )
+                : Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 70, vertical: 8),
+                    child: Text(
+                      'Submit',
+                      style: AppTextStyles.regular.copyWith(
+                        fontSize: 15,
+                        color: AppColors.white,
+                      ),
+                    ),
+                  ),
+            style: AppConstants.buttonStyle);
+      }),
     );
   }
 }

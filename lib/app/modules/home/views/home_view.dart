@@ -14,12 +14,25 @@ class HomeView extends GetView<HomeController> {
         title: Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: Obx(() {
+        return SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (controller.isInit.value)
+                SizedBox(
+                  height: 200,
+                  child: Image.network(controller.studentModel.value.imageUrl),
+                ),
+              if (controller.isInit.value)
+                Text(controller.studentModel.value.name),
+              TextButton(onPressed: controller.logout, child: Text('logout'))
+            ],
+          ),
+        );
+      }),
     );
   }
 }

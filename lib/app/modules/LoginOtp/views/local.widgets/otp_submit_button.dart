@@ -9,19 +9,27 @@ class OtpSubmitButton extends GetView<LoginOtpController> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 40, bottom: 15),
-      child: TextButton(
-          onPressed: controller.submitOtp,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 8),
-            child: Text(
-              'Submit',
-              style: AppTextStyles.regular.copyWith(
-                fontSize: 15,
+      child: Obx(
+        () => controller.isLoading.value
+            ? CircularProgressIndicator(
                 color: AppColors.white,
-              ),
-            ),
-          ),
-          style: AppConstants.buttonStyle),
+              )
+            : TextButton(
+                onPressed:
+                    controller.isLoading.value ? null : controller.submitOtp,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 70, vertical: 8),
+                  child: Text(
+                    'Submit',
+                    style: AppTextStyles.regular.copyWith(
+                      fontSize: 15,
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+                style: AppConstants.buttonStyle),
+      ),
     );
   }
 }

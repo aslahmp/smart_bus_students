@@ -12,6 +12,10 @@ class SplashController extends GetxController {
   void start() async {
     await UserManager.intUser();
     await Future.delayed(Duration(seconds: 1));
-    Get.offNamed(Routes.LOGIN_MOBILE_NUMBER);
+    if (UserManager.isUserLoged) {
+      Get.offNamed(Routes.HOME);
+    } else {
+      Get.offNamed(Routes.LOGIN_MOBILE_NUMBER);
+    }
   }
 }
