@@ -20,6 +20,7 @@ class FriebaseUser {
       print(user.value.toString());
       await UserManager.setUserLoginStatus(true);
       await UserManager.saveUserId(user.value.toString());
+      await UserManager.intUser();
     }
   }
 }
