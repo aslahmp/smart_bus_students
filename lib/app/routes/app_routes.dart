@@ -7,6 +7,10 @@ abstract class Routes {
   static const LOGIN_MOBILE_NUMBER = _Paths.LOGIN_MOBILE_NUMBER;
   static const LOGIN_OTP = _Paths.LOGIN_OTP;
   static const SPLASH = _Paths.SPLASH;
+  static const HOME_LAYOUT = _Paths.HOME_LAYOUT;
+  static const NOTIFICATIONS = _Paths.NOTIFICATIONS;
+  static const PROFILE = _Paths.PROFILE;
+  static const PAYMENT = _Paths.PAYMENT;
 }
 
 abstract class _Paths {
@@ -15,4 +19,8 @@ abstract class _Paths {
   static const LOGIN_MOBILE_NUMBER = '/login-mobile-number';
   static const LOGIN_OTP = '/login-otp';
   static const SPLASH = '/splash';
+  static const HOME_LAYOUT = '/home-layout';
+  static const NOTIFICATIONS = '/notifications';
+  static const PROFILE = '/profile';
+  static const PAYMENT = '/payment';
 }

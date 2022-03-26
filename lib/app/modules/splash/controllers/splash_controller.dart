@@ -13,7 +13,7 @@ class SplashController extends GetxController {
     await UserManager.intUser();
     await Future.delayed(Duration(seconds: 1));
     if (UserManager.isUserLoged) {
-      Get.offNamed(Routes.HOME);
+      Get.offNamed(Routes.HOME_LAYOUT);
     } else {
       Get.offNamed(Routes.LOGIN_MOBILE_NUMBER);
     }

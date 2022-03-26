@@ -6,6 +6,14 @@ import '../modules/LoginOtp/bindings/login_otp_binding.dart';
 import '../modules/LoginOtp/views/login_otp_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/homeLayout/bindings/home_layout_binding.dart';
+import '../modules/homeLayout/views/home_layout_view.dart';
+import '../modules/notifications/bindings/notifications_binding.dart';
+import '../modules/notifications/views/notifications_view.dart';
+import '../modules/payment/bindings/payment_binding.dart';
+import '../modules/payment/views/payment_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -36,6 +44,26 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOME_LAYOUT,
+      page: () => HomeLayoutView(),
+      binding: HomeLayoutBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATIONS,
+      page: () => NotificationsView(),
+      binding: NotificationsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT,
+      page: () => PaymentView(),
+      binding: PaymentBinding(),
     ),
   ];
 }

@@ -88,7 +88,7 @@ class LoginOtpController extends GetxController {
       isLoading.value = false;
       if (result.isSuccess) {
         await _userFirebase.setUser(mobileNumber.value);
-        Get.offAllNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME_LAYOUT);
       } else {
         Get.snackbar(
           "Invalid Code",
