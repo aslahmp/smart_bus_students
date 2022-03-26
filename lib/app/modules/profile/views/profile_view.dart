@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:smart_bus_students/app/modules/home/views/local.widgets/index.dart';
 
 import '../controllers/profile_controller.dart';
+import 'local.widgets/index.dart';
 
 class ProfileView extends GetView<ProfileController> {
   @override

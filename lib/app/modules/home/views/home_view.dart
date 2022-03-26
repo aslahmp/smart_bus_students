@@ -17,7 +17,8 @@ class HomeView extends GetView<HomeController> {
         width: double.infinity,
         child: Column(
           children: [
-            Head(),
+            // Head(),
+            PayButton(),
           ],
         ),
       ),
