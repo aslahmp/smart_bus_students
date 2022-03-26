@@ -18,8 +18,6 @@ class HomeView extends GetView<HomeController> {
         child: Column(
           children: [
             Head(),
-            UserDetails(),
-            TextButton(onPressed: controller.logout, child: Text('logout'))
           ],
         ),
       ),

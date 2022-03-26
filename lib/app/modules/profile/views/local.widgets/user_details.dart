@@ -1,11 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smart_bus_students/app/modules/profile/controllers/profile_controller.dart';
 
 import '../../../../../infastructure/utils/index.dart';
-import '../../controllers/home_controller.dart';
+import '../../../home/controllers/home_controller.dart';
 
-class UserDetails extends GetView<HomeController> {
+class UserDetails extends GetView<ProfileController> {
   const UserDetails({Key? key}) : super(key: key);
 
   @override

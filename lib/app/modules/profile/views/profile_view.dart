@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:smart_bus_students/app/modules/home/views/local.widgets/index.dart';
 
 import '../controllers/profile_controller.dart';
 
@@ -12,10 +13,13 @@ class ProfileView extends GetView<ProfileController> {
         title: Text('ProfileView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'ProfileView is working',
-          style: TextStyle(fontSize: 20),
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          children: [
+            UserDetails(),
+            TextButton(onPressed: controller.logout, child: Text('logout'))
+          ],
         ),
       ),
     );
