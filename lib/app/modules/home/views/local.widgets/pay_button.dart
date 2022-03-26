@@ -8,21 +8,21 @@ class PayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.only(top: 30, bottom: 10),
       child: Column(
         children: [
           CircleAvatar(
-            radius: 65,
+            radius: 75,
             backgroundColor: AppColors.blue3.withOpacity(.8),
             child: CircleAvatar(
-                radius: 60,
+                radius: 65,
                 backgroundColor: AppColors.blue3,
                 child: CircleAvatar(
-                    radius: 58,
+                    radius: 63,
                     backgroundColor: AppColors.white,
                     child: Icon(
                       Icons.blur_on_outlined,
-                      size: 90,
+                      size: 95,
                     ))),
           ),
           verticalSpace(10),

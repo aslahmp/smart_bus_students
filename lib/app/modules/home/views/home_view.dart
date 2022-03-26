@@ -15,10 +15,19 @@ class HomeView extends GetView<HomeController> {
         body: SafeArea(
       child: SizedBox(
         width: double.infinity,
+        height: double.infinity,
         child: Column(
           children: [
-            // Head(),
-            PayButton(),
+            Head(),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  PayButton(),
+                  Vehicele(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
