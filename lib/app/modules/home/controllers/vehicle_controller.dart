@@ -1,18 +1,20 @@
 import 'package:get/get.dart';
+import 'package:smart_bus_students/app/data/firbase/bus/firbase_get_bus.dart';
 import 'package:smart_bus_students/app/data/models/vehicle/bus_model.dart';
 
 class VehicleController extends GetxController {
   var buses = <BusModel>[].obs;
+  var _repo = FirbaseGetBus();
   @override
   void onInit() {
     getBuses();
     super.onInit();
   }
 
-  void getBuses() {
-    for (var i = 0; i < 5; i++) {
-      buses.add(dummeyBus);
-    }
+  void getBuses() async {
+    var buse = await _repo.getBuss();
+
+    buses.value = buse;
   }
 
   @override

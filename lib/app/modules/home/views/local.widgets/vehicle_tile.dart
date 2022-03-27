@@ -14,26 +14,27 @@ class VehicleTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '#${busModel.id}',
-                style: AppTextStyles.bold.copyWith(color: AppColors.white),
-              ),
-              verticalSpace(10),
-              Text(
-                busModel.number,
-                style: AppTextStyles.bold.copyWith(
-                  color: AppColors.white,
-                  fontSize: 18,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '#${busModel.id}',
+                  style: AppTextStyles.bold.copyWith(color: AppColors.white),
                 ),
-              ),
-            ],
+                verticalSpace(10),
+                Text(
+                  busModel.number,
+                  style: AppTextStyles.bold.copyWith(
+                    color: AppColors.white,
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
           ),
-          Spacer(),
           TextButton(
-            onPressed: () {},
+            onPressed: null,
             child: Text(
               'Track Bus',
               style: AppTextStyles.regular.copyWith(
