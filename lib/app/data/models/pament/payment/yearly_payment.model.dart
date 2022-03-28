@@ -1,3 +1,5 @@
+import 'package:smart_bus_students/infastructure/managers/index.dart';
+
 import 'mothly_payment.model.dart';
 
 class YearlyUserPaymentModel {
@@ -13,20 +15,104 @@ class YearlyUserPaymentModel {
   late MothlyUserPaymentModel? oct;
   late MothlyUserPaymentModel? nov;
   late MothlyUserPaymentModel? dec;
-  List<MothlyUserPaymentModel?> getList() {
+  List<MothlyUserPaymentModel> getList() {
     return [
-      jan,
-      feb,
-      mar,
-      apr,
-      may,
-      jun,
-      jul,
-      aug,
-      sep,
-      oct,
-      nov,
-      dec,
+      jan ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('jan'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      feb ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('feb'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      mar ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('mar'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      apr ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('apr'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      may ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('may'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      jun ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('jun'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      jul ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('jul'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      aug ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('aug'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      sep ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('sep'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      oct ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('oct'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      nov ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('nov'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
+      dec ??
+          MothlyUserPaymentModel(
+            amunt: 0,
+            date: '',
+            month: MonthManager.getMonthName('dec'),
+            isPaid: false,
+            isOnlinePay: false,
+          ),
     ];
   }
 

@@ -17,7 +17,6 @@ class FriebaseUser {
     var user =
         await firbaseDb.child('studentPhoneNumbers').child(phoneNumber).get();
     if (user.value != null) {
-      print(user.value.toString());
       await UserManager.setUserLoginStatus(true);
       await UserManager.saveUserId(user.value.toString());
       await UserManager.intUser();

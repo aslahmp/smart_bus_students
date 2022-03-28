@@ -8,13 +8,21 @@ class Fee extends GetView<PaymentController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-      children: controller.paymentdetails.value
-          .getList()
-          .map((e) => FeeTile(
-                paymentModel: e,
-              ))
-          .toList(),
-    ));
+      child: Obx(
+        () {
+          var list = controller.paymentdetails.value.getList();
+
+          return SingleChildScrollView(
+            child: Column(
+              children: list.map((e) {
+                return FeeTile(
+                  paymentModel: e,
+                );
+              }).toList(),
+            ),
+          );
+        },
+      ),
+    );
   }
 }

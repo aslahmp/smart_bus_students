@@ -17,21 +17,32 @@ class PaymentView extends GetView<PaymentController> {
             backgroundColor: AppColors.blue1,
             title: Text('Payment'),
             centerTitle: true,
+            actions: [
+              IconButton(
+                  onPressed: () => controller.getPaymentData(),
+                  icon: Icon(Icons.refresh))
+            ],
             bottom: TabBar(
+              indicatorColor: AppColors.white,
               tabs: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Fee ',
+                    'Fee Payment Details',
+                    textAlign: TextAlign.center,
                     style: AppTextStyles.bold.copyWith(
                       fontSize: 16,
                     ),
                   ),
                 ),
-                Text(
-                  'Online Payment',
-                  style: AppTextStyles.bold.copyWith(
-                    fontSize: 16,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Online Payment History',
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.bold.copyWith(
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ],
