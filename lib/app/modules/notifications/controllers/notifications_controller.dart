@@ -1,12 +1,19 @@
 import 'package:get/get.dart';
 
-class NotificationsController extends GetxController {
-  //TODO: Implement NotificationsController
+import '../../../data/firbase/notification/firebase_get_notifications.dart';
+import '../../../data/models/notification/notification_model.dart';
 
-  final count = 0.obs;
+class NotificationsController extends GetxController {
+  var notifications = <NotificationModel>[].obs;
+  final getNotificationFirebase = FirebaseGetNotifications();
   @override
   void onInit() {
+    getNotifications();
     super.onInit();
+  }
+
+  void getNotifications() async {
+    notifications.value = await getNotificationFirebase.getNotifications();
   }
 
   @override
@@ -16,5 +23,4 @@ class NotificationsController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

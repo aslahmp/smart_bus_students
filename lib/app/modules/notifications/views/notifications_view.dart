@@ -9,15 +9,18 @@ class NotificationsView extends GetView<NotificationsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('NotificationsView'),
+        title: Text('Notifications'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'NotificationsView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: SingleChildScrollView(child: Obx(() {
+        return Column(
+            children: controller.notifications
+                .map((notification) => ListTile(
+                      title: Text(notification.title),
+                      subtitle: Text(notification.description),
+                    ))
+                .toList());
+      })),
     );
   }
 }
