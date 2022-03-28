@@ -15,9 +15,15 @@ class NotificationsView extends GetView<NotificationsController> {
       body: SingleChildScrollView(child: Obx(() {
         return Column(
             children: controller.notifications
-                .map((notification) => ListTile(
-                      title: Text(notification.title),
-                      subtitle: Text(notification.description),
+                .map((notification) => Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 10),
+                      child: Card(
+                        child: ListTile(
+                          title: Text(notification.title),
+                          subtitle: Text(notification.description),
+                        ),
+                      ),
                     ))
                 .toList());
       })),
