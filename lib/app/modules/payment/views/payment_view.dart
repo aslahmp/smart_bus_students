@@ -19,7 +19,7 @@ class PaymentView extends GetView<PaymentController> {
             centerTitle: true,
             actions: [
               IconButton(
-                  onPressed: () => controller.getPaymentData(),
+                  onPressed: () => controller.getDatas(),
                   icon: Icon(Icons.refresh))
             ],
             bottom: TabBar(

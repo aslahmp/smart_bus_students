@@ -4,6 +4,8 @@ import '../modules/LoginMobileNumber/bindings/login_mobile_number_binding.dart';
 import '../modules/LoginMobileNumber/views/login_mobile_number_view.dart';
 import '../modules/LoginOtp/bindings/login_otp_binding.dart';
 import '../modules/LoginOtp/views/login_otp_view.dart';
+import '../modules/addPayment/bindings/add_payment_binding.dart';
+import '../modules/addPayment/views/add_fee_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/homeLayout/bindings/home_layout_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.PAYMENT,
       page: () => PaymentView(),
       binding: PaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_PAYMENT,
+      page: () => AddPaymentView(),
+      binding: AddPaymentBinding(),
     ),
   ];
 }

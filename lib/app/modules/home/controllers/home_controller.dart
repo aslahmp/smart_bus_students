@@ -12,6 +12,10 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
+  void addPayment() {
+    Get.toNamed(Routes.ADD_PAYMENT);
+  }
+
   @override
   void onReady() {
     super.onReady();
